@@ -21,32 +21,32 @@ void main() => group("Report", () {
 
 		test("should have detailed branch coverage", () {
 			final branches = report.records[1].branches;
-			expect(branches.found, 4);
-			expect(branches.hit, 4);
+			expect(branches?.found, 4);
+			expect(branches?.hit, 4);
 
-			expect(branches.data, hasLength(4));
-			expect(branches.data.first, isNotNull);
-			expect(branches.data.first.lineNumber, 8);
+			expect(branches?.data, hasLength(4));
+			expect(branches?.data.first, isNotNull);
+			expect(branches?.data.first.lineNumber, 8);
 		});
 
 		test("should have detailed function coverage", () {
 			final functions = report.records[1].functions;
-			expect(functions.found, 1);
-			expect(functions.hit, 1);
+			expect(functions?.found, 1);
+			expect(functions?.hit, 1);
 
-			expect(functions.data, hasLength(1));
-			expect(functions.data.first, isNotNull);
-			expect(functions.data.first.functionName, "func1");
+			expect(functions?.data, hasLength(1));
+			expect(functions?.data.first, isNotNull);
+			expect(functions?.data.first.functionName, "func1");
 		});
 
 		test("should have detailed line coverage", () {
 			final lines = report.records[1].lines;
-			expect(lines.found, 9);
-			expect(lines.hit, 9);
+			expect(lines?.found, 9);
+			expect(lines?.hit, 9);
 
-			expect(lines.data, hasLength(9));
-			expect(lines.data.first, isNotNull);
-			expect(lines.data.first.checksum, "5kX7OTfHFcjnS98fjeVqNA");
+			expect(lines?.data, hasLength(9));
+			expect(lines?.data.first, isNotNull);
+			expect(lines?.data.first.checksum, "5kX7OTfHFcjnS98fjeVqNA");
 		});
 
 		test("should throw an error if the input is invalid", () {
